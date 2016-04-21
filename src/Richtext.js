@@ -380,6 +380,7 @@ function extend (Y) {
                         insertSel[v[0]] = v[1]
                       }
                     }
+                    event.pos = position;
                     quill.insertText(position, vals.join(''), insertSel)
                   } else { // Array, that denotes a selection
                     // a new selection is created
@@ -455,6 +456,7 @@ function extend (Y) {
                       delLength--
                     }
                   }*/
+                  event.pos = pos
                   quill.deleteText(pos, pos + delLength)
                 } else if (event.values[0].constructor === Array) {
                   curSel = null
